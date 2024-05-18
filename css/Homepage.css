@@ -1,93 +1,100 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Work Sans", sans-serif;
 }
 
-.top-homepage{
+.top-homepage {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5rem 8rem;
+  gap: 2rem;
+  padding: 5rem 5rem;
 }
-.left-homepage{
+.left-homepage {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 2rem;
+  gap: 1.5rem;
 }
-.left-homepage h1{
-  width: 60%;
-  font-size: 67px;
+.left-homepage h1 {
+  font-size: 50px;
   font-weight: 500;
   color: #fff;
   line-height: 110%;
 }
-.left-homepage p{
-  font-size: 22px;
+.left-homepage p {
+  font-size: 18px;
   font-weight: normal;
   color: #fff;
   line-height: 140%;
   opacity: 0.7;
 }
-.left-homepage button{
-  background-color: #A259FF;
+.left-homepage button {
+  background-color: #a259ff;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
   padding: 1rem 2.5rem;
-  border-radius: 1rem;  
+  border-radius: 1rem;
   border: none;
 }
-.left-homepage button a{
+.left-homepage button a {
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   text-decoration: none;
 }
-.All-Customers{
+.All-Customers {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 4.5rem;
 }
-.rate{
+.rate {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
 }
-.rate h1{
+.rate h1 {
   font-family: "Space Mono", monospace;
   font-size: 28px;
   font-weight: 500;
   color: #fff;
 }
-.right-homepage{
+.rate p {
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff;
+  line-height: 140%;
+  opacity: 0.7;
+}
+.right-homepage {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  background-color: #3B3B3B;
+  background-color: #3b3b3b;
   border-radius: 1.5rem;
 }
-.right-homepage img{
+.right-homepage img {
   width: 100%;
   height: 100%;
 }
-.Space-walking{
+.Space-walking {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,44 +102,44 @@
   gap: 0.5rem;
   padding: 1.3rem;
 }
-.Space-walking h1{
+.Space-walking h1 {
   font-size: 22px;
   font-weight: 500;
   color: #fff;
 }
-.anima{
+.anima {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-.anima img{
+.anima img {
   width: 40px;
-  height: 40px;;
+  height: 40px;
 }
-.anima p{
+.anima p {
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   line-height: 140%;
   opacity: 0.7;
 }
-.Trending-collection{
+.Trending-collection {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
-  padding: 5rem 8rem;
+  align-items: center;
+  padding: 5rem 5rem;
   gap: 0.5rem;
 }
-.Trending-collection h1{
+.Trending-collection h1 {
   font-size: 28px;
   font-weight: 500;
   color: #fff;
 }
-.Trending-collection > p{
+.Trending-collection > p {
   font-size: 22px;
   font-weight: normal;
   color: #fff;
@@ -140,15 +147,15 @@
   opacity: 0.7;
   margin-bottom: 3rem;
 }
-.Collection{
+.Collection {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
-.all{
+.all {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -156,60 +163,74 @@
   align-items: start;
   gap: 1rem;
 }
-.all > img{
+.big {
   width: 100%;
   height: 100%;
 }
-.below-all{
+.below-all {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-  gap: 1rem;                      
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-.below-all img{
+.dog {
   width: 100%;
   height: 100%;
 }
-.all > p{
+.all > p {
   font-size: 22px;
   font-weight: normal;
   color: #fff;
   line-height: 160%;
 }
-.account-owner{
+.account-owner {
   margin-top: -0.8rem;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   gap: 0.5rem;
 }
-.account-owner p{
+.account-owner p {
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   line-height: 140%;
   opacity: 0.7;
 }
-.rankings{
+.Top-creators {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 5rem 5rem;
+  gap: 0.5rem;
+}
+.Top-creators h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+}
+.rankings {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
 }
-.rankings p{
+.rankings p {
   font-size: 22px;
   font-weight: normal;
   color: #fff;
   line-height: 160%;
   opacity: 0.7;
 }
-.rankings button{
+.rankings button {
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -217,41 +238,41 @@
   align-items: center;
   gap: 0.6rem;
   padding: 1rem 2.5rem;
-  border-radius: 1rem;  
-  border: 2px solid #A259FF;
+  border-radius: 1rem;
+  border: 2px solid #a259ff;
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   text-decoration: none;
 }
-.rankings button:active{
+.rankings button:active {
   background-color: black;
-  border: 2px solid transparent
+  border: 2px solid transparent;
 }
-.All-Creators{
+.All-Creators {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: 2rem;
 }
-.card{
+.card {
   width: 100%;
-  background-color: #3B3B3B;
+  background-color: #3b3b3b;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 2.5rem;
-  flex-grow:1;
+  padding: 2rem;
+  position: relative;
 }
-.card h4{
+.card h4 {
   font-size: 22px;
   font-weight: 500;
   color: #fff;
 }
-.txt{
+.txt {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -259,52 +280,50 @@
   align-items: center;
   gap: 0.8rem;
 }
-.txt h5{
+.txt h5 {
   font-size: 16px;
   font-weight: normal;
   color: #858584;
   line-height: 140%;
   opacity: 0.7;
-
 }
-.txt p{
+.txt p {
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   line-height: 140%;
   opacity: 0.7;
-
 }
-
-#number{
-  margin-left: -10.5rem;
-  margin-top: -1rem;
+#number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
   width: 35px;
   height: 35px;
 }
-#image{
-  margin-top: -3rem;
+#image {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
 }
-.Categories-all-cards{
+.Categories-all-cards {
   margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 2fr);
   width: 100%;
   gap: 2rem;
 }
 .Categories-card {
   width: fit-content;
-  background-color: #3B3B3B;
+  background-color: #3b3b3b;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  gap: 1.5rem;
   position: relative;
   overflow: hidden;
+  padding-bottom: 1.5rem;
 }
 
 #back {
@@ -314,18 +333,19 @@
 }
 
 #blur {
+  width: 80px;
+  height: 80px;
   position: absolute;
-  left: 100px;
-  top: 80px;
+  left: 37%;
+  top: 28%;
 }
 
 .Categories-card p {
   font-size: 22px;
   font-weight: normal;
   color: #fff;
-  padding: 1.5rem 2rem 3rem 2rem; 
 }
-.All-NFTs{
+.All-NFTs {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -333,27 +353,27 @@
   align-items: center;
   gap: 3rem;
 }
-.NFTs{
+.NFTs {
   border-radius: 2rem;
-  width: 100%;  
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  background-color: #3B3B3B;
+  background-color: #3b3b3b;
 }
-.NFTs img{
+.NFTs img {
   width: 100%;
   height: 100%;
 }
-.NFTs h4{
+.NFTs h4 {
   padding-left: 1.5rem;
   padding-top: 1rem;
   font-size: 22px;
   font-weight: 500;
   color: #fff;
 }
-.owner{
+.owner {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -362,7 +382,7 @@
   padding-left: 1.5rem;
   padding-top: 1rem;
 }
-.owner p{
+.owner p {
   font-family: "Space Mono", monospace;
   font-size: 16px;
   font-weight: normal;
@@ -370,7 +390,7 @@
   line-height: 140%;
   opacity: 0.7;
 }
-.price-split{
+.price-split {
   padding-right: 1.5rem;
   width: 100%;
   display: flex;
@@ -381,47 +401,47 @@
   padding-top: 1rem;
   padding-bottom: 1.5rem;
 }
-.price{
+.price {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 0.3rem;
 }
-.price p{
+.price p {
   font-size: 16px;
   font-weight: normal;
   color: #858584;
   line-height: 140%;
 }
-.price h5{
+.price h5 {
   font-family: "Space Mono", monospace;
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   line-height: 140%;
 }
-.Bid{
+.Bid {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 0.3rem;
 }
-.Bid p{
+.Bid p {
   font-size: 16px;
   font-weight: normal;
   color: #858584;
   line-height: 140%;
 }
-.Bid h5{
+.Bid h5 {
   font-family: "Space Mono", monospace;
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   line-height: 140%;
 }
-.Big-Mushroom{
+.Big-Mushroom {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -429,13 +449,13 @@
   align-items: center;
   position: relative;
 }
-.Big-Mushroom > img{
+.Big-Mushroom > img {
   width: 100%;
   height: 100%;
 }
-.inside-Big-Mushroom{
+.inside-Big-Mushroom {
   position: absolute;
-  top: 65%;
+  bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
@@ -443,9 +463,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  padding: 5rem 8rem;
+  padding: 5rem 5rem;
 }
-.Mush{
+.Mush {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -453,48 +473,47 @@
   align-items: start;
   gap: 1rem;
 }
-.free{
+.free {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0.8rem;
-
 }
-.Shroomie-Two{
-  margin-left: 8rem;
+.Shroomie-Two {
+  margin-left: 5rem;
   position: absolute;
-  top: 68%;
+  bottom: 250px;
   left: 0;
   width: fit-content;
   display: flex;
-  flex-direction: row ;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: #3B3B3B;
+  background-color: #3b3b3b;
   border-radius: 1.5rem;
   padding: 0.5rem 1rem;
 }
-.Shroomie-Two h3{
+.Shroomie-Two h3 {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
 }
-.See-NFt{
+.See-NFt {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 1rem;
 }
-.See-NFt h1{
-  font-size: 51px;
+.See-NFt h1 {
+  font-size: 45px;
   font-weight: 500;
   color: #fff;
 }
-.See-NFt button{
+.See-NFt button {
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -502,49 +521,49 @@
   align-items: center;
   gap: 0.6rem;
   padding: 1rem 2.5rem;
-  border-radius: 1rem;  
+  border-radius: 1rem;
   border: none;
   font-size: 16px;
   font-weight: normal;
-  color: #2B2B2B;
+  color: #2b2b2b;
   text-decoration: none;
 }
-.See-NFt button:active{
+.See-NFt button:active {
   background-color: black;
   color: white;
 }
-.timer{
+.timer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 0.5rem;
-  background-color: #3B3B3B;
+  background-color: #3b3b3b;
   opacity: 0.7;
   padding: 1rem;
-  border-radius: 1rem
+  border-radius: 1rem;
 }
-.timer p{
+.timer p {
   font-family: "Space Mono", monospace;
   font-size: 12px;
   font-weight: normal;
   color: #fff;
   line-height: 160%;
 }
-.The-time{
+.The-time {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: start;
   gap: 1rem;
 }
-.The-time h1{
+.The-time h1 {
   font-family: "Space Mono", monospace;
   font-size: 38px;
   font-weight: 500;
   color: #fff;
 }
-.all-Method{
+.all-Method {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -552,8 +571,8 @@
   align-items: center;
   gap: 2rem;
 }
-.Method{
-  background-color: #3B3B3B;
+.Method {
+  background-color: #3b3b3b;
   border-radius: 1.5rem;
   width: 100%;
   display: flex;
@@ -563,16 +582,17 @@
   gap: 1rem;
   padding: 1.5rem;
 }
-.Method img{
+.Method img {
   width: 100%;
   height: 100%;
 }
-.Method h4{
+.Method h4 {
   font-size: 22px;
   font-weight: 500;
   color: #fff;
 }
-.Method p{
+.Method p {
+  width: 100%;
   font-size: 16px;
   font-weight: normal;
   color: #fff;
@@ -580,46 +600,45 @@
   opacity: 0.7;
   text-align: center;
 }
-.Join-Us{
+.Join-Us {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 5rem 8rem;
+  padding: 5rem 5rem;
   margin-top: -1rem;
 }
-.Digest{
-  background-color: #3B3B3B;
+.Digest {
+  background-color: #3b3b3b;
   border-radius: 1.5rem;
   padding: 4rem;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 6rem;
+  gap: 2rem;
 }
-.Digest img{
+.Digest img {
   width: 100%;
   height: 100%;
 }
-.Join{
+.Join {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 2rem;
-  padding-right: 6rem;
 }
-.Join h1{
+.Join h1 {
   font-size: 38px;
   font-weight: 500;
   color: #fff;
   line-height: 120%;
 }
-.Join p{
+.Join p {
   font-size: 22px;
   font-weight: normal;
   color: #fff;
@@ -627,14 +646,389 @@
   opacity: 0.7;
   text-transform: capitalize;
 }
-.Join button{
-  background-color: #A259FF;
+.Join button {
+  background-color: #a259ff;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
-  padding: 1rem 2.5rem;
-  border-radius: 1rem;  
+  padding: 1rem 2rem;
+  border-radius: 1rem;
   border: none;
+}
+.break{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1179px) {
+  .All-Creators {
+    gap: 1.5rem;
+  }
+  #image {
+    width: 100px;
+    height: 100px;
+  }
+  #blur {
+    width: 70px;
+    height: 70px;
+    left: 33%;
+    top: 28%;
+  }
+  .card h4 {
+    font-size: 20px;
+  }
+  .Categories-card p {
+    font-size: 20px;
+  }
+  .Join h1 {
+    font-size: 36px;
+  }
+  .Join p {
+    font-size: 18px;
+  }
+  .Send-msg{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .Send-msg input{
+    flex-grow: 1;
+    width: 100%;
+    background-color: white;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    border-radius: 2rem;
+  }
+  .Send-msg button{
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .Send-msg button img{
+    width: 20px;
+    height: 20px; 
+  }
+}
+@media screen and (max-width: 1031px) {
+  .Join-Us{
+    padding: 2rem;
+  }
+  .Digest img{
+    width: 350px;
+  }
+  .Join{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .Join h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+  .Join p {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 960px) {
+  .Trending-collection{
+    margin-top: 4rem;
+  }
+  .All-NFTs{
+    gap: 1rem;
+  }
+  .Trending-collection{
+    padding: 2rem;
+  }
+  .Top-creators{
+    padding: 2rem;
+  }
+  .top-homepage{
+    padding: 2rem;
+  }
+  .inside-Big-Mushroom{
+    padding: 2rem;
+  }
+  .Shroomie-Two{
+    bottom: 40%;
+    margin-left: 2rem;
+  }
+  .all-Method{
+   flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .Method{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .Method img{
+    width: 308px;
+    height: 308px;
+  }
+  .See-NFt h1{
+    font-size: 40px;
+  }
+  .The-time h1{
+    font-size: 30px;
+  }
+  .Categories-all-cards{
+    gap: 1rem;
+  }
+  .All-Creators{
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .top-homepage{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .top-homepage button{
+    width: 100%;
+  }
+  .All-Customers{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .All-Creators{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .See-NFt h1{
+    font-size: 35px;
+  }
+
+}
+@media screen and (max-width: 818px) {
+  .Top-creators h1{
+    font-size: 25px;
+  }
+  .Top-creators p{
+    font-size: 18px;
+  }
+  .Join-Us img{
+    width: 320px;
+  }
+  .Digest{
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 787px) {
+  .Categories-all-cards{
+    margin-bottom: 3rem;
+  }
+  .Trending-collection{
+    padding: 1rem;
+  }
+  .Top-creators{
+    padding: 1rem;
+  }
+  .top-homepage{
+    padding: 1rem;
+  }
+  .inside-Big-Mushroom{
+    padding: 1rem;
+  }
+  .Shroomie-Two{
+    margin-left: 1rem;
+  }
+  .Join-Us{
+    padding: 1rem;
+  }
+  .All-NFTs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 746px){
+  .Categories-all-cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .Categories-card{
+    width: 100%;
+  }
+  .Collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (max-width: 689px) {
+  .Join-Us img{
+    width: 100%;
+    height: 100%;
+  }
+  .Digest{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .timer{
+    padding: 0.5rem;
+  }
+  .The-time h1{
+    font-size: 25px;
+  }
+  .See-NFt h1{
+    font-size: 25px;
+  }
+  .See-NFt button{
+    padding: 0.5rem 1rem;
+  }
+}
+@media screen and (max-width: 609px){
+  .All-Creators{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .Method img{
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 540px){
+  .The-time h1{
+    font-size: 20px;
+  }
+  .See-NFt h1{
+    font-size: 20px;
+  }
+  .Trending-collection p{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 513px){
+  .inside-Big-Mushroom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.5rem;
+    bottom: 30px;
+  }
+  .Shroomie-Two{
+    bottom: 5px;
+  }
+}
+@media screen and (max-width: 471px){
+  .rankings{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .all-Method{
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .Method{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Shroomie-Two{
+    display: none;
+  }
+  .inside-Big-Mushroom{
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+  }
+  .See-NFt{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .See-NFt h1{
+    text-align: center;
+  }
+  .See-NFt button{
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 13px;
+  }
+  .timer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+  }
+  .The-time{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 461px){
+  .All-Creators{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .All-Customers{
+    gap: 0;
+  }
+  .rate h1{
+    font-size: 20px;
+  }
+  .Trending-collection{
+    padding: 0.5rem;
+  }
+  .Top-creators{
+    padding: 0.5rem;
+  }
+  .top-homepage{
+    padding: 0.5rem;
+  }
+  .inside-Big-Mushroom{
+    padding: 0.5rem;
+  }
+  .Shroomie-Two{
+    margin-left: 0.5rem;
+  }
+  .Join-Us{
+    padding: 0.5rem;
+  }
+  .Trending-collection p{
+    text-align: center;
+  }
+  .Categories-all-cards{
+    gap: 0.5rem;
+  }
+}
+@media screen and (max-width: 348px){
+  .below-all{
+    display: none;
+  }
+  .See-NFt h1{
+    font-size: 15px;
+  }
+  .The-time h1{
+    font-size: 16px;
+  }
+  .The-time p{
+    font-size: 10px;
+  }
 }

@@ -1,0 +1,527 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  background-color: #2b2b2b;
+}
+body.active {
+  position: fixed;
+}
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  list-style-type: none;
+}
+.links li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+.header-button {
+  background-color: #a259ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  border: none;
+}
+.header-button a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+/* HAMBURGER MENU */
+.hamburger-menu {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+}
+.hambar {
+  width: 70%;
+  height: 5px;
+  background-color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s, opacity 0.8s, top 0.6s;
+  z-index: 2000;
+}
+.bar1 {
+  top: 25%;
+}
+.bar3 {
+  top: 75%;
+}
+.hamburger-menu.active .bar1 {
+  transform: translate(-50%, -50%) rotate(-315deg);
+  top: 50%;
+}
+.hamburger-menu.active .bar2 {
+  opacity: 0;
+}
+.hamburger-menu.active .bar3 {
+  transform: translate(-50%, -50%) rotate(-225deg);
+  top: 50%;
+}
+.off-screen-menu {
+  position: fixed;
+  top: 0;
+  background-color: #2b2b2b;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  transition: right 0.9s;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.ham-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.off-screen-menu.active {
+  right: 0;
+}
+.Links2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  list-style-type: none;
+}
+.Links2 li a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+}
+.Links2 li a:hover {
+  text-decoration: underline;
+}
+.hamburger-menu {
+  display: none;
+}
+/* The Sign Up Page */
+.The-Sign-up-body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+}
+.left-Sign-up {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-Sign-up img {
+  width: 100%;
+  height: 100%;
+}
+.Right-Sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  width: 100%;
+}
+.Right-Sign-up h1 {
+  color: white;
+  font-size: 51px;
+  font-weight: normal;
+}
+.Right-Sign-up p {
+  color: white;
+  font-size: 22px;
+  font-weight: normal;
+  opacity: 0.8;
+  line-height: 160%;
+}
+.input-part {
+  padding: 1rem 0 0 0;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+.error {
+  width: 25px;
+  height: 25px;
+  margin-right: 0.5rem;
+  display: none;
+}
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  border-radius: 2rem;
+  width: 100%;
+}
+.input input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 18px;
+  width: 100%;
+  color: #2b2b2b;
+}
+.input input::placeholder {
+  color: #2b2b2b;
+  font-size: 16px;
+}
+.input input:focus {
+  outline: none;
+  width: 100%;
+}
+.input-part button {
+  width: 100%;
+  background-color: #a259ff;
+  color: white;
+  font-size: 16px;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  margin-top: 1.5rem;
+}
+.input-part button:active {
+  background-color: black;
+}
+footer {
+  background-color: #3b3b3b;
+  width: 100%;
+  padding: 2.4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+}
+.top-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  padding: 0rem 1rem;
+  margin-bottom: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.icons-prt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+.icons-prt img{
+  width: 100%;
+  height: 100%;
+
+}
+.icons-prt p {
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 140%;
+  opacity: 0.8;
+}
+.icon {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+}
+.Explore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+.Explore h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Space Mono", monospace;
+}
+.Explore p {
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 140%;
+  opacity: 0.8;
+}
+.Explore ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1.5rem;
+}
+.Explore ul li a {
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 140%;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.Send-msg {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0rem 0rem 0rem 1rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+.Send-msg input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  width: 100%;
+  color: #2b2b2b;
+}
+.Send-msg input::placeholder {
+  color: #2b2b2b;
+  font-size: 16px;
+}
+.Send-msg button {
+  background-color: #a259ff;
+  color: white;
+  font-size: 16px;
+  padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#hidden{
+  display: none;
+}
+footer hr {
+  width: 100%;
+  border: 1px solid #858584;
+}
+footer p {
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 140%;
+  opacity: 0.8;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1073px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  .links {
+    gap: 1rem;
+  }
+  .The-Sign-up-body {
+    gap: 2rem;
+  }
+  .Right-Sign-up {
+    gap: 1rem;
+  }
+  .input-part {
+    gap: 0.5rem;
+  }
+  .input-part button {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 932px) {
+  .Right-Sign-up h1 {
+    font-size: 45px;
+  }
+  .Right-Sign-up p {
+    font-size: 20px;
+  }
+  footer {
+    padding: 2rem;
+  }
+  .top-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hamburger-menu {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+}
+@media screen and (max-width: 871px) {
+  .The-Sign-up-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+  }
+  .Right-Sign-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Right-Sign-up h1 {
+    text-align: center;
+  }
+  .Right-Sign-up p {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 511px) {
+  header {
+    padding: 1rem;
+  }
+  .Right-Sign-up {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  .input-part {
+    width: 100%;
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+  .input {
+    width: 100%;
+    flex-grow: 1;
+  }
+  .input input {
+    width: 100%;
+  }
+  footer{
+    padding: 2rem 1rem;
+  }
+  .Send-msg{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .Explore{
+    width: 100%;
+  }
+  .Send-msg input{
+    flex-grow: 1;
+    width: 100%;
+    background-color: white;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    border-radius: 2rem;
+  }
+  .Send-msg button{
+    width: 100%;
+    padding: 0.8rem;
+  }
+  #hidden{
+    display: block;
+  }
+}
+@media screen and (max-width: 387px) {
+  .Right-Sign-up h1 {
+    font-size: 38px;
+  }
+  .Right-Sign-up p {
+    font-size: 15px;
+  }
+  .input-part{
+    padding: 0 0.5rem;
+  } 
+  .The-Logo img{
+    width: 100%;
+    height: 100%;
+  }
+  header {
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 303px) {
+  .Right-Sign-up h1 {
+    font-size: 35px;
+  }
+  .Right-Sign-up p {
+    font-size: 14px;
+  }
+  .Explore h1{
+    font-size: 18px;
+  }
+  .Explore p{
+    font-size: 14px;
+  }
+  footer p{
+    font-size: 13px;
+  }
+}

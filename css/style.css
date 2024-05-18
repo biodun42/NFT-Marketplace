@@ -358,6 +358,9 @@ footer {
   align-items: center;
   gap: 0.5rem;
 }
+.Send-msg button:active {
+  background-color: black;
+}
 #hidden{
   display: none;
 }

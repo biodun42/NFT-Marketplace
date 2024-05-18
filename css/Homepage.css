@@ -48,12 +48,13 @@
   padding: 1rem 2.5rem;
   border-radius: 1rem;
   border: none;
-}
-.left-homepage button a {
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   text-decoration: none;
+} 
+.left-homepage button:active {
+  background-color: black;
 }
 .All-Customers {
   display: flex;
@@ -659,6 +660,9 @@
   padding: 1rem 2rem;
   border-radius: 1rem;
   border: none;
+}
+.Join button:active {
+  background-color: black;
 }
 .break{
   display: flex;

@@ -65,6 +65,7 @@ function ErrorMessage() {
 
 function submitForm() {
   if (!ErrorMessage()) {
+    alert("Welcome to NFT Marketplace " + userName.value)
     location.href = "Homepage.html";
   }
 }

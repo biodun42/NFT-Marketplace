@@ -317,7 +317,6 @@
   gap: 2rem;
 }
 .Categories-card {
-  width: fit-content;
   background-color: #3b3b3b;
   border-radius: 1rem;
   display: flex;

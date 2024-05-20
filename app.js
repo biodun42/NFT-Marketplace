@@ -65,14 +65,12 @@ function ErrorMessage() {
   }
   return hasError;
 }
-
 function submitForm() {
   if (!ErrorMessage()) {
     alert("Welcome to NFT Marketplace " + userName.value);
     window.location = "Homepage.html";
+  }
 }
-}
-
 
 // The Hambuger Menu
 const hamMenu = document.querySelector(".hamburger-menu");
@@ -93,13 +91,12 @@ navs.forEach((nav) => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const navLinks = document.querySelectorAll('.nav-links ul.links li, .off-screen-menu ul.Links2 li');
-
-  navLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      alert('Please sign up to access NFT Marketplace!');
-    });
+const navLinks = document.querySelectorAll(
+  ".nav-links ul.links li, .off-screen-menu ul.Links2 li"
+);
+navLinks.forEach(function (link) {
+  link.addEventListener("click", function () {
+    alert("Please sign up to access NFT Marketplace!");
+    window.location = "index.html";
   });
 });

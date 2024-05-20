@@ -27,7 +27,10 @@ function ErrorMessage() {
   } else if (symbolRegex.test(userName.value)) {
     showError(0);
     hasError = true;
-  } else if (!letterRegex.test(userName.value) || !numberRegex.test(userName.value)) {
+  } else if (
+    !letterRegex.test(userName.value) ||
+    !numberRegex.test(userName.value)
+  ) {
     showError(0);
     hasError = true;
   } else {
@@ -43,7 +46,7 @@ function ErrorMessage() {
   } else {
     clearError(1);
   }
-  
+
   if (password.value === "") {
     showError(2);
     hasError = true;
@@ -65,26 +68,38 @@ function ErrorMessage() {
 
 function submitForm() {
   if (!ErrorMessage()) {
-    alert("Welcome to NFT Marketplace " + userName.value)
-    location.href = "Homepage.html";
-  }
+    alert("Welcome to NFT Marketplace " + userName.value);
+    window.location = "Homepage.html";
+}
 }
 
-// The Hambuger Menu
-const hamMenu = document.querySelector('.hamburger-menu');
-const offScreenMenu = document.querySelector('.off-screen-menu');
-const container = document.querySelector('body')
 
-hamMenu.addEventListener('click', () =>{
-  hamMenu.classList.toggle('active')
-  offScreenMenu.classList.toggle('active')
-  container.classList.toggle('active')
+// The Hambuger Menu
+const hamMenu = document.querySelector(".hamburger-menu");
+const offScreenMenu = document.querySelector(".off-screen-menu");
+const container = document.querySelector("body");
+
+hamMenu.addEventListener("click", () => {
+  hamMenu.classList.toggle("active");
+  offScreenMenu.classList.toggle("active");
+  container.classList.toggle("active");
 });
 
-const navs = document.querySelectorAll(".nav")
-navs.forEach((nav)=>{
-  nav.addEventListener('click', function(){
-    hamMenu.classList.remove('active')
-  offScreenMenu.classList.remove('active')
-  })
-})
+const navs = document.querySelectorAll(".nav");
+navs.forEach((nav) => {
+  nav.addEventListener("click", function () {
+    hamMenu.classList.remove("active");
+    offScreenMenu.classList.remove("active");
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.nav-links ul.links li, .off-screen-menu ul.Links2 li');
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      alert('Please sign up to access NFT Marketplace!');
+    });
+  });
+});

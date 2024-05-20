@@ -371,21 +371,29 @@
 }
 .NFTs h4 {
   padding-left: 1.5rem;
+  padding-right: 1.5rem;
   padding-top: 1rem;
   font-size: 22px;
   font-weight: 500;
   color: #fff;
 }
 .owner {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   gap: 0.8rem;
   padding-left: 1.5rem;
+  padding-right: 1.5rem;
   padding-top: 1rem;
 }
+.owner img{
+  width: 25px;
+  height: 25px;
+}
 .owner p {
+  width: 100%;
   font-family: "Space Mono", monospace;
   font-size: 16px;
   font-weight: normal;
@@ -795,6 +803,18 @@
   .All-Creators{
     gap: 1rem;
   }
+  .cards h4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .owner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .price-split {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 @media screen and (max-width: 900px) {
   .top-homepage{
@@ -999,6 +1019,12 @@
   }
 }
 @media screen and (max-width: 461px){
+  header{
+    padding: 0.5rem;
+  }
+  footer{
+    padding: 2rem 0.5rem;
+  }
   .All-Creators{
     grid-template-columns: repeat(1, 1fr);
   }

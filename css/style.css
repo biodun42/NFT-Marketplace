@@ -426,6 +426,9 @@ footer p {
   }
 }
 @media screen and (max-width: 871px) {
+  header {
+    padding: 1rem;
+  }
   .The-Sign-up-body {
     display: flex;
     flex-direction: column;
@@ -445,11 +448,11 @@ footer p {
   .Right-Sign-up p {
     text-align: center;
   }
+  footer{
+    padding: 2rem 1rem;
+  }
 }
 @media screen and (max-width: 511px) {
-  header {
-    padding: 1rem;
-  }
   .Right-Sign-up {
     width: 100%;
     padding: 0 0.5rem;
@@ -495,6 +498,11 @@ footer p {
   }
   #hidden{
     display: block;
+  }
+}
+@media screen and (max-width: 461px){
+  footer{
+    padding: 2rem 0.5rem;
   }
 }
 @media screen and (max-width: 387px) {

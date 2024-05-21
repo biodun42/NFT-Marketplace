@@ -91,12 +91,31 @@ navs.forEach((nav) => {
   });
 });
 
-const navLinks = document.querySelectorAll(
-  ".nav-links ul.links li, .off-screen-menu ul.Links2 li"
-);
+const navLinks = document.querySelectorAll(".li");
 navLinks.forEach(function (link) {
   link.addEventListener("click", function () {
     alert("Please sign up to access NFT Marketplace!");
     window.location = "index.html";
   });
 });
+
+const zap = document.querySelectorAll(".zap");
+const rightCollection = document.querySelector(".right-all-collection");
+const leftCollection = document.querySelector(".left-all-collection");
+const signOut = document.querySelector(".sign-out");
+
+function hideCollection() {
+  zap.forEach((zap) => {
+    zap.classList.add("active");
+    leftCollection.style.borderBottom = "none";
+    rightCollection.style.borderBottom = "2px solid #858584"
+  });
+}
+
+function showCollection() {
+  zap.forEach((zap) => {
+    zap.classList.remove("active");
+    leftCollection.style.borderBottom = "2px solid #858584";
+    rightCollection.style.borderBottom = "none";
+  });
+}

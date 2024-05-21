@@ -678,6 +678,10 @@
   align-items: center;
   gap: 1rem;
 }
+.zap.active {
+  display: none;
+}
+
 
 /* Responsiveness */
 @media screen and (max-width: 1179px) {

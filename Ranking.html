@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT MarketPlace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/Homepage.css" />
+    <link rel="stylesheet" href="css/ranking.css">
+  </head>
+  <body>
+    <header>
+      <div class="The-Logo">
+        <img src="images/The-Logo.svg" alt="The-Logo-Part" />
+      </div>
+      <div class="nav-links">
+        <ul class="links">
+          <li><a href="Homepage.html">Homepage</a></li>
+          <li><a href="Marketplace.html">Marketplace</a></li>
+          <li><a href="#">Connect a wallet</a></li>
+        </ul>
+        <button class="header-button var" onclick="logout()">
+          <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
+            >Sign out</a
+          >
+        </button>
+      </div>
+      <div class="hamburger-menu">
+        <div class="hambar bar1"></div>
+        <div class="hambar bar2"></div>
+        <div class="hambar bar3"></div>
+      </div>
+      <div class="off-screen-menu">
+        <ul class="Links2">
+          <li class="nav"><a href="Homepage.html">Homepage</a></li>
+          <li class="nav"><a href="#">Rankings</a></li>
+          <li class="nav"><a href="#">Connect a wallet</a></li>
+        </ul>
+        <button class="header-button var" onclick="logout()">
+          <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
+            >Sign out</a
+          >
+        </button>
+        </div>
+      </div>
+    </header>
+    <section class="top-head-ranking">
+        <h1>Top Creators</h1>
+        <p>Check out top ranking NFT artists on the NFT Marketplace.</p>
+    </section>  
+    <section class="all-ranking">
+      <div class="top-all-ranking">
+        <div onclick="showRankOne()" class="rankin rank-one">
+          <h1>Today</h1>
+        </div>
+        <div onclick="showRankTwo()" class="rankin rank-two">
+          <h1>This Week</h1>
+        </div>
+        <div onclick="showRankThree()" class="rankin rank-three vee">
+          <h1>This Month</h1>
+        </div>
+        <div onclick="showRankFour()" class="rankin rank-four vee">
+          <h1>All Time</h1>
+        </div>
+      </div>
+      <div class="All-rankings">
+        <div class="card">
+          <img id="number" src="images/One.svg" alt="" />
+          <img id="image" src="images/One-image.svg" alt="" />
+          <h4>Jaydon Bothman</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+9.41%</p>
+          </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>602</p>
+          </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Two.svg" alt="" />
+          <img id="image" src="images/Two-image.svg" alt="" />
+          <h4>Ruben Carder</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+9.01%</p>
+          </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>580</p>
+          </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Three.svg" alt="" />
+          <img id="image" src="images/Three-image.svg" alt="" />
+          <h4>Alfredo Septimus</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+8.78%</p>
+          </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>567</p>
+          </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Four.svg" alt="" />
+          <img id="image" src="images/Four-image.svg" alt="" />
+          <h4>Davis Franci</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+8.71%</p>
+          </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>560</p>
+          </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Five.svg" alt="" />
+          <img id="image" src="images/Five-image.svg" alt="" />
+          <h4>Livia Rosser</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+8.41%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>551</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Six.svg" alt="" />
+          <img id="image" src="images/Six-image.svg" alt="" />
+          <h4>Kianna Donin</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+8.35%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>545</p>
+            </div>
+            </div>
+        <div class="card">
+          <img id="number" src="images/Seven.svg" alt="" />
+          <img id="image" src="images/Seven-image.svg" alt="" />
+          <h4>Phillip Lipshutz</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+8.21%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>540</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Eight.svg" alt="" />
+          <img id="image" src="images/Eight-image.svg" alt="" />
+          <h4>Maria Rosser</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+8.11%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>535</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Nine.svg" alt="" />
+          <img id="image" src="images/Nine-image.svg" alt="" />
+          <h4>Kianna Stanton</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+8.01%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>530</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Ten.svg" alt="" />
+          <img id="image" src="images/Nebulakid.svg" alt="" />
+          <h4>Angel Lubin</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.91%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>525</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Eleven.svg" alt="" />
+          <img id="image" src="images/Allison Tuff.svg" alt="" />
+          <h4>Allison Torff</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.81%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>520</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Twelve.svg" alt="" />
+          <img id="image" src="images/BeKind2Robots.svg" alt="" />
+          <h4>Davis Workman</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.71%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>515</p>
+            </div>
+          </div>
+        <div class="card">
+          <img id="number" src="images/Thirteen.svg" alt="" />
+          <img id="image" src="images/Puppypower.svg" alt="" />
+          <h4>Lindsey Lipshutz</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.61%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>510</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Fourteen.svg" alt="" />
+          <img id="image" src="images/Anime kid icon.svg" alt="" />
+          <h4>Randy Carder</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.51%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>505</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/fifteen.svg" alt="" />
+          <img id="image" src="images/KeepItreal.svg" alt="" />
+          <h4>Lydia Culhane</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.41%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>500</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/Sixteen.svg" alt="" />
+          <img id="image" src="images/MoonDancer.svg" alt="" />
+          <h4>Rayna Bator</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.31%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>495</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/seventeen.svg" alt="" />
+          <img id="image" src="images/Twelve-image.svg" alt="" />
+          <h4>Jocelyn Westervelt</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.21%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>490</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/eighteen.svg" alt="" />
+          <img id="image" src="images/One-image.svg" alt="" />
+          <h4>Marilyn Torff</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.11%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>485</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/nineteen.svg" alt="" />
+          <img id="image" src="images/Nebulakid.svg" alt="" />
+          <h4>Skylar Levin</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+7.01%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>480</p>
+            </div>
+        </div>
+        <div class="card">
+          <img id="number" src="images/twenty.svg" alt="" />
+          <img id="image" src="images/One-image.svg" alt="" />
+          <h4>Terry Dorwart</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+6.91%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>475</p>
+            </div>
+        </div>
+        <div class="card fr">
+          <img id="number" src="images/Twenty-one.svg" alt="" />
+          <img id="image" src="images/Allison Tuff.svg" alt="" />
+          <h4>Larry Norwart</h4>
+          <div class="txt">
+            <h5>Volume:</h5>
+            <p>12.4 ETH</p>
+          </div>
+          <div class="txt-e">
+            <h5>Change:</h5>
+            <p>+6.81%</p>
+            </div>
+          <div class="txt-e txt">
+            <h5>NFTs Sold:</h5>
+            <p>470</p>
+            </div>
+        </div>
+      </div>
+      </section>
+      <footer>
+        <div class="top-footer">
+          <div class="icons-prt">
+            <img src="images/The-Logo.svg" alt="" />
+            <p>
+              NFT marketplace UI created <br />
+              with Anima for Figma.
+            </p>
+            <p>Join our community</p>
+            <div class="icon">
+              <img src="images/DiscordLogo.svg" alt="" />
+              <img src="images/YoutubeLogo.svg" alt="" />
+              <img src="images/TwitterLogo.svg" alt="" />
+              <img src="images/InstagramLogo.svg" alt="" />
+            </div>
+          </div>
+          <div class="Explore">
+            <h1>Explore</h1>
+            <ul>
+              <li><a href="#">MarketPlace</a></li>
+              <li><a href="#">Rankings</a></li>
+              <li><a href="#">Connect a wallet</a></li>
+            </ul>
+          </div>
+          <div class="Explore">
+            <h1>Join Our Weekly Digest</h1>
+            <p>
+              Get exclusive promotions & updates <br />
+              straight to your inbox.
+            </p>
+            <div class="Send-msg">
+              <input type="text" placeholder="Enter your email here" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <p>&#169;NFT Market. Use this template freely.</p>
+      </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

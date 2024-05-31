@@ -113,6 +113,12 @@ body > hr{
   border-radius: 2rem;
   font-family: "Space Mono", monospace;
 }
+.left-all-collection:active{
+  background-color: transparent;
+}
+.right-all-collection:active{
+  background-color: transparent;
+}
 .spacing{
   padding: 5rem;
   gap: 1.5rem;

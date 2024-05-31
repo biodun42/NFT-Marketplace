@@ -72,7 +72,7 @@ header {
 }
 .hambar {
   width: 70%;
-  height: 4px;
+  height: 3.5px;
   background-color: white;
   border-radius: 25px;
   position: absolute;
@@ -448,6 +448,8 @@ footer p {
   .Right-Sign-up p {
     text-align: center;
   }
+}
+@media screen and (max-width: 787px) {
   footer{
     padding: 2rem 1rem;
   }

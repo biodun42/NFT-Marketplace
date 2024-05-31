@@ -95,7 +95,6 @@ const navLinks = document.querySelectorAll(".li");
 navLinks.forEach(function (link) {
   link.addEventListener("click", function () {
     alert("Please sign up to access NFT Marketplace!");
-    window.location = "index.html";
   });
 });
 
@@ -108,7 +107,7 @@ function hideCollection() {
   zap.forEach((zap) => {
     zap.classList.add("active");
     leftCollection.style.borderBottom = "none";
-    rightCollection.style.borderBottom = "2px solid #858584"
+    rightCollection.style.borderBottom = "2px solid #858584";
   });
 }
 
@@ -118,4 +117,42 @@ function showCollection() {
     leftCollection.style.borderBottom = "2px solid #858584";
     rightCollection.style.borderBottom = "none";
   });
+}
+
+function logout() {
+  alert("You have successfully logged out");
+  window.location.href = "index.html";
+}
+
+const rankOne = document.querySelector(".rank-one");
+const rankTwo = document.querySelector(".rank-two");
+const rankThree = document.querySelector(".rank-three");
+const rankFour = document.querySelector(".rank-four");
+
+function showRankOne() {
+  rankOne.classList.remove("active");
+  rankTwo.classList.remove("active");
+  rankThree.classList.remove("active");
+  rankFour.classList.remove("active");
+}
+
+function showRankTwo() {
+  rankOne.classList.add("active");
+  rankTwo.classList.add("active");
+  rankThree.classList.remove("active");
+  rankFour.classList.remove("active");
+}
+
+function showRankThree() {
+  rankOne.classList.add("active");
+  rankTwo.classList.remove("active");
+  rankThree.classList.add("active");
+  rankFour.classList.remove("active");
+}
+
+function showRankFour() {
+  rankOne.classList.add("active");
+  rankTwo.classList.remove("active");
+  rankThree.classList.remove("active");
+  rankFour.classList.add("active");
 }

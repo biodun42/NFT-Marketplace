@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+.top-head-ranking{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 5rem;
+  gap: 1rem;
+}
+.top-head-ranking h1{
+  font-size: 51px;
+  font-weight: normal;
+  color: white;
+}
+.top-head-ranking p{
+  font-size: 22px;
+  color: white;
+  font-weight: normal;
+  line-height: 140%;
+}
+.all-ranking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0 5rem;
+  gap: 1rem;
+}
+.top-all-ranking {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.rankin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.rank-one {
+  border-bottom: 2px solid #858584;
+}
+.rankin h1 {
+  font-size: 22px;
+  color: white;
+  font-weight: normal;
+}
+.rank-one.active {
+  border-bottom: none;
+}
+.rank-two.active {
+  border-bottom: 2px solid #858584;
+}
+.rank-three.active {
+  border-bottom: 2px solid #858584;
+}
+.rank-four.active {
+  border-bottom: 2px solid #858584;
+}
+
+.rank-one:active {
+  background-color: transparent;
+}
+.rank-two:active {
+  background-color: transparent;
+}
+.rank-three:active {
+  background-color: transparent;
+}
+.rank-four:active {
+  background-color: transparent;
+}
+.All-rankings {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0 2rem 0;
+}
+.card {
+  width: 100%;
+  background-color: #3b3b3b;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0 2rem 0;
+  position: relative;
+}
+.card h4 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+}
+.txt-e {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2rem 0 2rem;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: -0.5rem;
+}
+.txt-e h5 {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Space Mono", monospace;
+  color: #858584;
+  line-height: 140%;
+  opacity: 0.7;
+}
+.txt-e p {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Space Mono", monospace;
+  color: #00AC4F;
+  line-height: 140%;
+  opacity: 0.7;
+}
+.txt {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2rem 0 2rem;
+  align-items: center;
+  gap: 0.8rem;
+}
+.txt h5 {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Space Mono", monospace;
+  color: #858584;
+  line-height: 140%;
+  opacity: 0.7;
+}
+.txt p {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Space Mono", monospace;
+  color: #fff;
+  line-height: 140%;
+  opacity: 0.7;
+}
+#number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 35px;
+  height: 35px;
+}
+#image {
+  width: 120px;
+  height: 120px;
+}
+
+@media screen and (max-width: 932px) {
+  .all-ranking {
+    padding: 0 2rem;
+  }
+  .All-rankings{
+    margin: 1rem 0 1rem 0;
+    gap: 1rem;
+  }
+  .top-head-ranking{
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 787px) {
+  .all-ranking {
+    padding: 0 1rem;
+  }
+  .top-head-ranking{
+    padding: 1rem;
+  }
+  .All-rankings{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fr{
+    display: none;
+  }
+  .rankin h1 {
+    font-size: 18px;
+  }
+  .top-head-ranking p{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 613px) {
+  .top-head-ranking{
+    margin-bottom: 2rem;
+  }
+  .top-head-ranking h1{
+    width: 100%;
+    text-align: center;
+  }
+  .top-head-ranking p{
+    text-align: center;
+  }
+}
+@media screen and (max-width: 497px) {
+ .All-rankings{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .vee{
+    display: none;
+  }
+}
+@media screen and (max-width: 461px) {
+  .top-head-ranking{
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin-top: 2rem;
+  }
+  .all-ranking{
+    padding: 0 0.5rem;
+  }
+}
+@media screen and (max-width: 356px){
+  .top-head-ranking{
+    padding:0;
+  }
+  .top-head-ranking h1{
+    font-size: 36px;
+  }
+}

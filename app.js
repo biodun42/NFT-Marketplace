@@ -67,10 +67,18 @@ function ErrorMessage() {
 }
 function submitForm() {
   if (!ErrorMessage()) {
-    alert("Welcome to NFT Marketplace " + userName.value);
-    window.location = "Homepage.html";
+    Swal.fire({
+      title: "Good job!",
+      text: "Welcome to the NFT Marketplace! " + userName.value,
+      icon: "success"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location = "Homepage.html";
+      }
+    });
   }
 }
+
 
 // The Hambuger Menu
 const hamMenu = document.querySelector(".hamburger-menu");
@@ -120,9 +128,17 @@ function showCollection() {
 }
 
 function logout() {
-  alert("You have successfully logged out");
-  window.location.href = "index.html";
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "You have successfully logged out!",
+    showConfirmButton: false,
+    timer: 1500
+  }).then(() => {
+    window.location.href = "index.html";
+  });
 }
+
 
 const rankOne = document.querySelector(".rank-one");
 const rankTwo = document.querySelector(".rank-two");

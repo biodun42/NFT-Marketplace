@@ -6,7 +6,7 @@ const inputFields = document.querySelectorAll(".input");
 const errorImage = document.querySelectorAll(".error");
 
 function showError(index) {
-  inputFields[index].style.backgroundColor = "hsl(0, 100%, 74%)";
+  inputFields[index].style.backgroundColor = "#f8d7da";
   errorImage[index].style.display = "block";
 }
 
@@ -102,7 +102,11 @@ navs.forEach((nav) => {
 const navLinks = document.querySelectorAll(".li");
 navLinks.forEach(function (link) {
   link.addEventListener("click", function () {
-    alert("Please sign up to access NFT Marketplace!");
+    Swal.fire({
+      title: "Error!",
+      text: "You need to sign up to access NFT Marketplace!",
+      icon: "warning"
+    })
   });
 });
 
@@ -129,15 +133,26 @@ function showCollection() {
 
 function logout() {
   Swal.fire({
-    position: "top-end",
-    icon: "success",
-    title: "You have successfully logged out!",
-    showConfirmButton: false,
-    timer: 1500
-  }).then(() => {
-    window.location.href = "index.html";
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, sign out!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "Signed Out!",
+        text: "You have successfully signed out!",
+        icon: "success"
+      }).then(() => {
+        window.location.href = "index.html";
+      });
+    }
   });
 }
+
 
 
 const rankOne = document.querySelector(".rank-one");

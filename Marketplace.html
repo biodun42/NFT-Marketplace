@@ -18,7 +18,7 @@
           <li><a href="Homepage.html">Homepage</a></li>
           <li><a href="Ranking.html">Rankings</a></li>
         </ul>
-        <button class="header-button var" onclick="logout()">
+        <button class="header-button var" id="logout">
           <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
             >Sign out</a
           >
@@ -34,23 +34,22 @@
           <li class="nav"><a href="Homepage.html">Homepage</a></li>
           <li class="nav"><a href="#">Rankings</a></li>
         </ul>
-        <button class="header-button nav" onclick="logout()">
+        <button class="header-button nav" id="logout">
           <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
             >Sign out</a
           >
         </button>
-        </div>
       </div>
     </header>
     <section class="top-marketplace">
-        <h1>Browse Marketplace</h1>
-        <p>Browse through more than 50k NFTs on the NFT Marketplace.</p>
-        <div class="Search-all">
-        <input type="text" placeholder="Search your favourite NFTs">
-        <img src="images/Search icon.svg" alt="">
+      <h1>Browse Marketplace</h1>
+      <p>Browse through more than 50k NFTs on the NFT Marketplace.</p>
+      <div class="Search-all">
+        <input type="text" placeholder="Search your favourite NFTs" />
+        <img src="images/Search icon.svg" alt="" />
       </div>
     </section>
-    <hr>
+    <hr />
     <section class="all-collection">
       <div class="top-all-collection">
         <div onclick="showCollection()" class="left-all-collection">
@@ -319,7 +318,67 @@
       <hr />
       <p>&#169;NFT Market. Use this template freely.</p>
     </footer>
-    <script src="app.js"></script>
     <script src="script.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import {
+        createUserWithEmailAndPassword,
+        getAuth,
+        onAuthStateChanged,
+        signInWithEmailAndPassword,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB1bIJfE6ZW681t0Wm5sgSOjQ7fjtYRmPk",
+        authDomain: "nft-marketplace-14988.firebaseapp.com",
+        projectId: "nft-marketplace-14988",
+        storageBucket: "nft-marketplace-14988.appspot.com",
+        messagingSenderId: "937151858021",
+        appId: "1:937151858021:web:98ff38202edb4f6dc04d8c",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Sign Out
+      const signOutBtns = document.querySelectorAll("#logout"); // Multiple buttons
+      signOutBtns.forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          console.log("Signing out...");
+          try {
+            const result = await Swal.fire({
+              title: "Are you sure?",
+              text: "You are about to sign out!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, sign out!",
+            });
+
+            if (result.isConfirmed) {
+              await signOut(auth);
+              Swal.fire({
+                title: "Signed Out!",
+                text: "You have successfully signed out!",
+                icon: "success",
+              }).then(() => {
+                window.location.href = "signin.html";
+              });
+            }
+          } catch (error) {
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: error.message,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

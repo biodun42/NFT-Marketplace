@@ -1,83 +1,222 @@
-const userName = document.getElementById("username");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirm-password");
-const inputFields = document.querySelectorAll(".input");
-const errorImage = document.querySelectorAll(".error");
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  where,
+  query,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
-function showError(index) {
-  inputFields[index].style.backgroundColor = "#f8d7da";
-  errorImage[index].style.display = "block";
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyB1bIJfE6ZW681t0Wm5sgSOjQ7fjtYRmPk",
+  authDomain: "nft-marketplace-14988.firebaseapp.com",
+  projectId: "nft-marketplace-14988",
+  storageBucket: "nft-marketplace-14988.appspot.com",
+  messagingSenderId: "937151858021",
+  appId: "1:937151858021:web:98ff38202edb4f6dc04d8c",
+};
 
-function clearError(index) {
-  inputFields[index].style.backgroundColor = "";
-  errorImage[index].style.display = "none";
-}
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const colRef = collection(db, "users");
 
-function ErrorMessage() {
-  const symbolRegex = /[^a-zA-Z0-9]/;
-  const letterRegex = /[a-zA-Z]/;
-  const numberRegex = /[0-9]/;
-  let hasError = false;
+// Get logged in user
+const getLoggedInUser = async (id) => {
+  try {
+    const q = query(colRef, where("uid", "==", id));
+    const querySnapshot = await getDocs(q);
 
-  if (userName.value === "") {
-    showError(0);
-    hasError = true;
-  } else if (symbolRegex.test(userName.value)) {
-    showError(0);
-    hasError = true;
-  } else if (
-    !letterRegex.test(userName.value) ||
-    !numberRegex.test(userName.value)
+    if (!querySnapshot.empty) {
+      const user = querySnapshot.docs[0].data();
+      console.log("User found: ", user);
+      return user;
+    } else {
+      console.log("No user found");
+      return null;
+    }
+  } catch (error) {
+    console.log("Error fetching user: ", error);
+  }
+};
+
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    const currentUser = await getLoggedInUser(user.uid);
+    console.log("Current User: ", currentUser);
+  } else {
+    console.log("No user logged in");
+  }
+});
+
+// Sign Up Form Validation
+const signUpForm = document.getElementById("signUp");
+signUpForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const target = e.target;
+  const username = target.username.value;
+  const email = target.email.value;
+  const password = target.password.value;
+  const confirmPassword = target.confirmPassword.value;
+  const signUpBtn = target.Cbutton;
+
+  if (
+    username === "" ||
+    email === "" ||
+    password === "" ||
+    confirmPassword === ""
   ) {
-    showError(0);
-    hasError = true;
-  } else {
-    clearError(0);
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      },
+    });
+    Toast.fire({
+      icon: "error",
+      title: "Please fill in all fields!",
+    });
+    return;
   }
 
-  if (email.value === "") {
-    showError(1);
-    hasError = true;
-  } else if (!email.value.includes("@gmail.com")) {
-    showError(1);
-    hasError = true;
-  } else {
-    clearError(1);
-  }
-
-  if (password.value === "") {
-    showError(2);
-    hasError = true;
-  } else {
-    clearError(2);
-  }
-
-  if (confirmPassword.value === "") {
-    showError(3);
-    hasError = true;
-  } else if (password.value !== confirmPassword.value) {
-    showError(3);
-    hasError = true;
-  } else {
-    clearError(3);
-  }
-  return hasError;
-}
-function submitForm() {
-  if (!ErrorMessage()) {
-    Swal.fire({
-      title: "Good job!",
-      text: "Welcome to the NFT Marketplace! " + userName.value,
-      icon: "success"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location = "Homepage.html";
-      }
+  if (password !== confirmPassword) {
+    return Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Password does not match",
+      showConfirmButton: false,
+      timer: 1500,
     });
   }
-}
+
+  try {
+    signUpBtn.value = "Creating Account...";
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+
+    await addDoc(colRef, {
+      username,
+      email,
+      uid: res.user.uid,
+    });
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Welcome ${username}!`,
+      showConfirmButton: false,
+      timer: 2500,
+    }).then(() => {
+      window.location.href = "Homepage.html";
+    });
+  } catch (error) {
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: error.message,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } finally {
+    signUpBtn.value = "Create Account";
+  }
+});
+
+// Sign In Form Validation
+const signInForm = document.getElementById("signIn");
+signInForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const target = e.target;
+  const email = target.email.value;
+  const password = target.password.value;
+  const signInBtn = target.Sbutton;
+
+  if (email === "" || password === "") {
+    return Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Please fill in all fields!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
+
+  try {
+    signInBtn.value = "Signing In...";
+    const res = await signInWithEmailAndPassword(auth, email, password);
+    const currentUser = await getLoggedInUser(res.user.uid);
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Welcome back ${currentUser.username}!`,
+      showConfirmButton: false,
+      timer: 2500,
+    }).then(() => {
+      window.location.href = "Homepage.html";
+    });
+  } catch (error) {
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: error.message,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } finally {
+    signInBtn.value = "Sign In";
+  }
+});
+
+// Sign Out
+const signOutBtns = document.querySelectorAll("#logout"); // Multiple buttons
+signOutBtns.forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    console.log("Signing out...");
+    try {
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, sign out!",
+      });
+
+      if (result.isConfirmed) {
+        await signOut(auth);
+        Swal.fire({
+          title: "Signed Out!",
+          text: "You have successfully signed out!",
+          icon: "success",
+        }).then(() => {
+          window.location.href = "index.html";
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: error.message,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  });
+});
 
 
 // The Hambuger Menu
@@ -96,24 +235,34 @@ navs.forEach((nav) => {
   nav.addEventListener("click", function () {
     hamMenu.classList.remove("active");
     offScreenMenu.classList.remove("active");
+    container.classList.remove("active");
   });
 });
 
 const navLinks = document.querySelectorAll(".li");
 navLinks.forEach(function (link) {
   link.addEventListener("click", function () {
-    Swal.fire({
-      title: "Error!",
-      text: "You need to sign up to access NFT Marketplace!",
-      icon: "warning"
-    })
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      },
+    });
+    Toast.fire({
+      icon: "error",
+      title: "You need to log in to access NFT Marketplace!",
+    });
   });
 });
 
 const zap = document.querySelectorAll(".zap");
 const rightCollection = document.querySelector(".right-all-collection");
 const leftCollection = document.querySelector(".left-all-collection");
-const signOut = document.querySelector(".sign-out");
 
 function hideCollection() {
   zap.forEach((zap) => {
@@ -130,30 +279,6 @@ function showCollection() {
     rightCollection.style.borderBottom = "none";
   });
 }
-
-function logout() {
-  Swal.fire({
-    title: "Are you sure?",
-    text: "You won't be able to revert this!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, sign out!"
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        title: "Signed Out!",
-        text: "You have successfully signed out!",
-        icon: "success"
-      }).then(() => {
-        window.location.href = "index.html";
-      });
-    }
-  });
-}
-
-
 
 const rankOne = document.querySelector(".rank-one");
 const rankTwo = document.querySelector(".rank-two");

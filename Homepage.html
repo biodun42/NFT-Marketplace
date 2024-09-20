@@ -17,8 +17,9 @@
           <li><a href="Marketplace.html">Marketplace</a></li>
           <li><a href="Ranking.html">Rankings</a></li>
         </ul>
-        <button class="header-button" onclick="logout()">
-          <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
+        <button class="header-button" id="logout">
+          <img src="images/The-User in Sign up Button.svg" alt="User Icon" /><a
+            href="#"
             >Sign out</a
           >
         </button>
@@ -33,12 +34,11 @@
           <li class="nav"><a href="Marketplace.html">Marketplace</a></li>
           <li class="nav"><a href="Ranking.html">Rankings</a></li>
         </ul>
-        <button class="header-button nav" onclick="logout()">
+        <button class="header-button nav" id="logout">
           <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
             >Sign out</a
           >
         </button>
-        </div>
       </div>
     </header>
     <section class="top-homepage">
@@ -92,7 +92,7 @@
           </div>
           <p>DSGN Animals</p>
           <div class="account-owner">
-            <img  src="images/Mr fox ico.svg" alt="" />
+            <img src="images/Mr fox ico.svg" alt="" />
             <p>Mrfox</p>
           </div>
         </div>
@@ -395,29 +395,30 @@
           <img src="images/Wallet-one.svg" alt="" />
           <div class="break">
             <h4>Setup Your Wallet</h4>
-          <p>
-            Set up your wallet of choice. Connect it to the Animarket by
-            clicking the wallet icon in the top right corner.
-          </p>
+            <p>
+              Set up your wallet of choice. Connect it to the Animarket by
+              clicking the wallet icon in the top right corner.
+            </p>
           </div>
         </div>
         <div class="Method">
           <img src="images/Wallet-two.svg" alt="" />
           <div class="break">
             <h4>Create Collection</h4>
-          <p>
-            Upload your work and setup your collection. Add a description, social links and floor price.
-          </p>
+            <p>
+              Upload your work and setup your collection. Add a description,
+              social links and floor price.
+            </p>
           </div>
         </div>
         <div class="Method">
           <img src="images/Wallet-Three.svg" alt="" />
           <div class="break">
             <h4>Start Earning</h4>
-          <p>
-            Choose between auctions and fixed-price listings. Start earning by
-            selling your NFTs or trading others.
-          </p>
+            <p>
+              Choose between auctions and fixed-price listings. Start earning by
+              selling your NFTs or trading others.
+            </p>
           </div>
         </div>
       </div>
@@ -475,7 +476,67 @@
       <hr />
       <p>&#169;NFT Market. Use this template freely.</p>
     </footer>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
     <script src="script.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import {
+        createUserWithEmailAndPassword,
+        getAuth,
+        onAuthStateChanged,
+        signInWithEmailAndPassword,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB1bIJfE6ZW681t0Wm5sgSOjQ7fjtYRmPk",
+        authDomain: "nft-marketplace-14988.firebaseapp.com",
+        projectId: "nft-marketplace-14988",
+        storageBucket: "nft-marketplace-14988.appspot.com",
+        messagingSenderId: "937151858021",
+        appId: "1:937151858021:web:98ff38202edb4f6dc04d8c",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Sign Out
+      const signOutBtns = document.querySelectorAll("#logout"); // Multiple buttons
+      signOutBtns.forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          console.log("Signing out...");
+          try {
+            const result = await Swal.fire({
+              title: "Are you sure?",
+              text: "You are about to sign out!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, sign out!",
+            });
+
+            if (result.isConfirmed) {
+              await signOut(auth);
+              Swal.fire({
+                title: "Signed Out!",
+                text: "You have successfully signed out!",
+                icon: "success",
+              }).then(() => {
+                window.location.href = "signin.html";
+              });
+            }
+          } catch (error) {
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: error.message,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

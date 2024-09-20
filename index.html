@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NFT MarketPlace</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/Responsive.css" />
   </head>
   <body>
     <header>
@@ -38,7 +37,6 @@
             >Sign up</a
           >
         </button>
-        </div>
       </div>
     </header>
     <section class="The-Sign-up-body">
@@ -51,32 +49,32 @@
           Welcome! enter your details and start <br />
           creating, collecting and selling NFTs.
         </p>
-        <div class="input-part">
-            <div class="input">
-              <img src="images/The username user.svg" alt="" />
-              <input id="username" type="text" placeholder="Username" />
-              <img class="error" src="images/warning.png" alt="" />
-            </div>
-            <div class="input">
-              <img src="images/The email envelope.svg" alt="" />
-              <input id="email" type="text" placeholder="Email Address" />
-              <img class="error" src="images/warning.png" alt="" />
-            </div>
-            <div class="input">
-              <img src="images/The password LockKey.svg" alt="" />
-              <input id="password" type="password" placeholder="Password" />
-              <img class="error" src="images/warning.png" alt="" />
-            </div>
-            <div class="input">
-              <img src="images/The password LockKey.svg" alt="" />
-              <input
-                id="confirm-password"
-                type="password"
-                placeholder="Confirm Password"
-              />
-              <img class="error" src="images/warning.png" alt="" />
-            </div>
-          <button onclick="submitForm()">Create account</button>
+        <form id="signUp" class="input-part">
+          <div class="input">
+            <img src="images/The username user.svg" alt="" />
+            <input id="username" type="text" placeholder="Username" />
+          </div>
+          <div class="input">
+            <img src="images/The email envelope.svg" alt="" />
+            <input id="email" type="text" placeholder="Email Address"/>
+          </div>
+          <div class="input">
+            <img src="images/The password LockKey.svg" alt="" />
+            <input id="password" type="password" placeholder="Password" autocomplete="on" />
+          </div>
+          <div class="input">
+            <img src="images/The password LockKey.svg" alt="" />
+            <input
+              id="confirmPassword"
+              type="password"
+              placeholder="Confirm Password"
+              autocomplete="on"
+            />
+          </div>
+          <input id="Cbutton" type="submit" value="Create account">  
+        </form>
+        <div class="signin-link"></div>
+          <p>Already have an account? <a href="signin.html">Log In</a></p>
         </div>
       </div>
     </section>
@@ -111,14 +109,17 @@
           </p>
           <div class="Send-msg">
             <input type="text" placeholder="Enter your email here" />
-            <button><img id="hidden" src="images/EnvelopeSimple.svg" alt="" /> Subscribe</button>
+            <button>
+              <img id="hidden" src="images/EnvelopeSimple.svg" alt="" />
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
       <hr />
       <p>&#169;NFT Market. Use this template freely.</p>
     </footer>
-    <script src="app.js"></script>
     <script src="script.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

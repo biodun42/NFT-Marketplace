@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT MarketPlace - Sign In</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="The-Logo">
+        <img src="images/The-Logo.svg" alt="The-Logo-Part" />
+      </div>
+      <div class="nav-links">
+        <ul class="links">
+          <li class="li"><a href="#">Marketplace</a></li>
+          <li class="li"><a href="#">Rankings</a></li>
+        </ul>
+        <button class="header-button">
+          <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
+            >Sign up</a
+          >
+        </button>
+      </div>
+      <div class="hamburger-menu">
+        <div class="hambar bar1"></div>
+        <div class="hambar bar2"></div>
+        <div class="hambar bar3"></div>
+      </div>
+      <div class="off-screen-menu">
+        <ul class="Links2">
+          <li class="nav li"><a href="#">Marketplace</a></li>
+          <li class="nav li"><a href="#">Rankings</a></li>
+        </ul>
+        <button class="header-button nav">
+          <img src="images/The-User in Sign up Button.svg" alt="" /><a href="#"
+            >Sign up</a
+          >
+        </button>
+      </div>
+    </header>
+    <section class="The-Sign-up-body">
+      <div class="left-Sign-up">
+        <img src="images/Big image in Sign-up page.svg" alt="" />
+      </div>
+      <div class="Right-Sign-up">
+        <h1>Sign In</h1>
+        <p>
+          Welcome! enter your details and start <br />
+          creating, collecting and selling NFTs.
+        </p>
+        <form id="signIn" class="input-part">
+          <div class="input">
+            <img src="images/The email envelope.svg" alt="" />
+            <input id="email" type="text" placeholder="Email Address" />
+          </div>
+          <div class="input">
+            <img src="images/The password LockKey.svg" alt="" />
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              autocomplete="on"
+            />
+          </div>
+          <input id="Sbutton" type="submit" value="Sign In" />
+        </form>
+        <div class="signup-link">
+          <p>Don't have an account? <a href="index.html">Create one</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="top-footer">
+        <div class="icons-prt">
+          <img src="images/The-Logo.svg" alt="" />
+          <p>
+            NFT marketplace UI created <br />
+            with Anima for Figma.
+          </p>
+          <p>Join our community</p>
+          <div class="icon">
+            <img src="images/DiscordLogo.svg" alt="" />
+            <img src="images/YoutubeLogo.svg" alt="" />
+            <img src="images/TwitterLogo.svg" alt="" />
+            <img src="images/InstagramLogo.svg" alt="" />
+          </div>
+        </div>
+        <div class="Explore">
+          <h1>Explore</h1>
+          <ul>
+            <li class="li"><a href="#">MarketPlace</a></li>
+            <li class="li"><a href="#">Rankings</a></li>
+          </ul>
+        </div>
+        <div class="Explore">
+          <h1>Join Our Weekly Digest</h1>
+          <p>
+            Get exclusive promotions & updates <br />
+            straight to your inbox.
+          </p>
+          <div class="Send-msg">
+            <input type="text" placeholder="Enter your email here" />
+            <button>
+              <img id="hidden" src="images/EnvelopeSimple.svg" alt="" />
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p>&#169;NFT Market. Use this template freely.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import {
+        createUserWithEmailAndPassword,
+        getAuth,
+        onAuthStateChanged,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        where,
+        query,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB1bIJfE6ZW681t0Wm5sgSOjQ7fjtYRmPk",
+        authDomain: "nft-marketplace-14988.firebaseapp.com",
+        projectId: "nft-marketplace-14988",
+        storageBucket: "nft-marketplace-14988.appspot.com",
+        messagingSenderId: "937151858021",
+        appId: "1:937151858021:web:98ff38202edb4f6dc04d8c",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      const colRef = collection(db, "users");
+
+      // Get logged in user
+      const getLoggedInUser = async (id) => {
+        try {
+          const q = query(colRef, where("uid", "==", id));
+          const querySnapshot = await getDocs(q);
+
+          if (!querySnapshot.empty) {
+            const user = querySnapshot.docs[0].data();
+            console.log("User found: ", user);
+            return user;
+          } else {
+            console.log("No user found");
+            return null;
+          }
+        } catch (error) {
+          console.log("Error fetching user: ", error);
+        }
+      };
+
+      // Sign In Form Validation
+      const signInForm = document.getElementById("signIn");
+      signInForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const target = e.target;
+        const email = target.email.value;
+        const password = target.password.value;
+        const signInBtn = target.Sbutton;
+
+        if (email === "" || password === "") {
+          return Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Please fill in all fields!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+
+        try {
+          signInBtn.value = "Signing In...";
+          const res = await signInWithEmailAndPassword(auth, email, password);
+          const currentUser = await getLoggedInUser(res.user.uid);
+
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `Welcome back ${currentUser.username}!`,
+            showConfirmButton: false,
+            timer: 2500,
+          }).then(() => {
+            window.location.href = "Homepage.html";
+          });
+        } catch (error) {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: error.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } finally {
+          signInBtn.value = "Sign In";
+        }
+      });
+    </script>
+  </body>
+</html>
